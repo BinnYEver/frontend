@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>result page</title>
+    <link rel="shortcut icon" href="../static/favicon.png">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/resultER.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Indie+Flower" />
+</head>
+
+<body>
+
+    <section class="nav_bar_box">
+        <div class="w nav_bar_body">
+            <div class="fl">
+                <ul>
+                    <li><img src="../static/imgs/menu group.png" alt=""></li>
+                    <li id="DocumentID"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms/">Document</a>
+                    </li>
+                    <li id="FQID"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms/">F&Q</a></li>
+                    <li id="AboutID"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms/">About</a></li>
+                </ul>
+            </div>
+            <div id="main_title">
+                <h1>Language Model Net</h1>
+                <p>-- harvest kowledge graphs from pretrained language models --</p>
+            </div>
+            <!-- <div class="fr">
+                <ul>
+                    <li><a href="{{ url_for('log_in') }}"><img src="../static/imgs/account_circle.png" alt=""></a>
+                    <li><a href="{{ url_for('sign_up')}}" id="sign_up_btn">sign up</a></li>
+                    <li><a href="#"><img src="../static/imgs/notification_circle.png" alt=""></a></li>
+                    </li>
+                </ul>
+            </div> -->
+        </div>
+    </section>
+    <section class="w result_board">
+        <h1>Result</h1>
+        <div class="model_type_div">
+            <span>Model type:</span>
+            <span class="M_type">RoBerta-large</span>
+
+        </div>
+        <div class="relationship_div">
+            <span>Relationship:</span>
+            <span class="relationship_name">BeUsedFor</span>
+        </div>
+        <div class="seed_entity_div">
+            <span>Seed Entity:</span>
+            <span class="seed_entity_name">outfield & catch baseballs</span>
+            <span class="seed_entity_name">desk & work on</span>
+        </div>
+        <section class="search_box">
+            <div class="model_search">
+                <h4>Model Type:</h4>
+                <div id="Model_type">
+                    <div class="options-container">
+                        <div class="option"><input type="radio" class="radio" id="RoBerta-large"
+                                name="model_type"><label for="RoBerta-large">RoBerta-large</label>
+                        </div>
+                        <div class="option"><input type="radio" class="radio" id="RoBerta-base" name="model_type"><label
+                                for="RoBerta-base">RoBerta-base</label>
+                        </div>
+                        <div class="option"><input type="radio" class="radio" id="Distilbert" name="model_type"><label
+                                for="Distilbert">Distilbert</label>
+                        </div>
+                        <div class="option"><input type="radio" class="radio" id="Bert-large" name="model_type"><label
+                                for="Bert-large">Bert-large</label>
+                        </div>
+                        <div class="option"><input type="radio" class="radio" id="Bert-base" name="model_type"><label
+                                for="Bert-base">Bert-base</label>
+                        </div>
+
+                    </div>
+                    <div class="selected">Select the model type</div>
+
+                </div>
+            </div>
+            <div class="relationship_search">
+                <h4>Relationship:</h4>
+                <div id="Relationship"><input type="text"></div>
+            </div>
+            <div class="seed_search">
+                <h4>Seed Entity:</h4>
+                <div id="Seed_Entity">
+                    <div class="entity_pair">
+                        <div class="entity_pair_inputbox"><input type="text"><input type="text"></div>
+                        <div class="entity_pair_inputbox"><input type="text"><input type="text"></div>
+                        <div class="entity_pair_inputbox"><input type="text"><input type="text"></div>
+
+                    </div>
+                </div>
+
+            </div>
+            <a href="javascript:;" class="add_entity">+</a>
+            <a href="javascript:;" class="min_entity">-</a>
+            <div class="submit_but"><a href="{{url_for( 'resultER' )}}">Submit</a></div>
+        </section>
+
+        <section class="result_tuples">
+            <div class="head_table">
+                <span class="tuples_col">repsonse_dict</span>
+                <span class="feedback_col">Feedback:</span>
+            </div>
+
+            <div class="each_tuple">
+                <span class="entity1">question</span>
+                <span class="each_tuple_RW">
+                    <span class="each_tuple_relationship">⟶BeUsedFor⟶</span>
+                    <span class="each_tuple_weight">weight:0.17444</span>
+                </span>
+                <span class="entity2">answer question</span>
+                <span class="source_from">source:RoBERTa-large</span>
+                <span class="each_tuple_FB">
+                    <a href="javascript:;"><img src="../static/imgs/check.png" alt=""></a>
+                    <a href="javascript:;"><img src="../static/imgs/wrong.png" alt=""></a>
+                    <a href="javascript:;"><img src="../static/imgs/NA.png" alt=""></a>
+                </span>
+            </div>
+
+            <div class="each_tuple">
+                <span class="entity1">mask</span>
+                <span class="each_tuple_RW">
+                    <span class="each_tuple_relationship">⟶BeUsedFor⟶</span>
+                    <span class="each_tuple_weight">weight:0.11141</span>
+                </span>
+                <span class="entity2">face mask</span>
+                <span class="source_from">source:RoBERTa-large</span>
+                <span class="each_tuple_FB">
+                    <a href="javascript:;"><img src="../static/imgs/check.png" alt=""></a>
+                    <a href="javascript:;"><img src="../static/imgs/wrong.png" alt=""></a>
+                    <a href="javascript:;"><img src="../static/imgs/NA.png" alt=""></a>
+                </span>
+            </div>
+
+            <div class="each_tuple">
+                <span class="entity1">field</span>
+                <span class="each_tuple_RW">
+                    <span class="each_tuple_relationship">⟶BeUsedFor⟶</span>
+                    <span class="each_tuple_weight">weight:0.09034</span>
+                </span>
+                <span class="entity2">play football</span>
+                <span class="source_from">source:RoBERTa-large</span>
+                <span class="each_tuple_FB">
+                    <a href="javascript:;"><img src="../static/imgs/check.png" alt=""></a>
+                    <a href="javascript:;"><img src="../static/imgs/wrong.png" alt=""></a>
+                    <a href="javascript:;"><img src="../static/imgs/NA.png" alt=""></a>
+                </span>
+            </div>
+
+            <div class="each_tuple">
+                <span class="entity1">platform</span>
+                <span class="each_tuple_RW">
+                    <span class="each_tuple_relationship">⟶BeUsedFor⟶</span>
+                    <span class="each_tuple_weight">weight:0.067425</span>
+                </span>
+                <span class="entity2">social media</span>
+                <span class="source_from">source:RoBERTa-large</span>
+                <span class="each_tuple_FB">
+                    <a href="javascript:;"><img src="../static/imgs/check.png" alt=""></a>
+                    <a href="javascript:;"><img src="../static/imgs/wrong.png" alt=""></a>
+                    <a href="javascript:;"><img src="../static/imgs/NA.png" alt=""></a>
+                </span>
+            </div>
+
+            <div class="each_tuple">
+                <span class="entity1">bridge</span>
+                <span class="each_tuple_RW">
+                    <span class="each_tuple_relationship">⟶BeUsedFor⟶</span>
+                    <span class="each_tuple_weight">weight:0.05670</span>
+                </span>
+                <span class="entity2">cross roads</span>
+                <span class="source_from">source:RoBERTa-large</span>
+                <span class="each_tuple_FB">
+                    <a href="javascript:;"><img src="../static/imgs/check.png" alt=""></a>
+                    <a href="javascript:;"><img src="../static/imgs/wrong.png" alt=""></a>
+                    <a href="javascript:;"><img src="../static/imgs/NA.png" alt=""></a>
+                </span>
+            </div>
+
+
+        </section>
+
+    </section>
+
+
+
+
+    <section class="footer_box">
+        <div class="w footer_body">
+            <div class="information">
+                <div id="contact_us">
+                    <p class="main_title">Contact Us</p>
+                    <p class="sub_content"><img src="../static/imgs/mail_outline.png" alt=""> 1234567@gmail.com</p>
+                    <p class="sub_content"><img src="../static/imgs/mail_outline.png" alt=""> 7654321@gmail.com</p>
+                    <p class="sub_content"><img src="../static/imgs/local_phone.png" alt=""> +123456789</p>
+                </div>
+                <div id="downloads">
+                    <p class="main_title">Downloads</p>
+                    <p class="sub_content"><a href="#"><img src="../static/imgs/file_download.png" alt=""></a>(88.88GB)
+                    </p>
+                </div>
+                <div id="query">
+                    <p class="main_title">Have any question?</p>
+                    <div>
+                        <div class="feedback_box"><input type="text"><span><a href="#">Send</a></span></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <ul class="bg-squares">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+
+
+    <script src="../static/js/resultER.js">
+
+
+
+    </script>
+</body>
+
+</html>

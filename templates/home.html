@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>home page</title>
+    <link rel="shortcut icon" href="../static/favicon.png">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Indie+Flower" />
+</head>
+
+<body>
+
+    <section class="nav_bar_box">
+        <div class="w nav_bar_body">
+            <div class="fl">
+                <ul>
+                    <li><img src="../static/imgs/menu group.png" alt=""></li>
+                    <li id="DocumentID"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms/">Document</a>
+                    </li>
+                    <li id="FQID"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms/">F&Q</a></li>
+                    <li id="AboutID"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms/">About</a></li>
+                </ul>
+            </div>
+            <div id="main_title">
+                <h1>Language Model Net</h1>
+                <p>-- harvest kowledge graphs from pretrained language models --</p>
+            </div>
+            <!-- <div class="fr">
+                <ul>
+                    <li><a href="{{ url_for('log_in') }}"><img src="../static/imgs/account_circle.png" alt=""></a>
+                    <li><a href="{{ url_for('sign_up')}}" id="sign_up_btn">sign up</a></li>
+                    <li><a href="#"><img src="../static/imgs/notification_circle.png" alt=""></a></li>
+                    </li>
+                </ul>
+            </div> -->
+        </div>
+    </section>
+    <div class="w body_container">
+        <section class="search_box">
+            <div class="model_search">
+                <h4>Model Type:</h4>
+                <div id="Model_type">
+                    <div class="options-container">
+                        <div class="option"><input type="radio" class="radio" id="RoBerta-large"
+                                name="model_type"><label for="RoBerta-large">RoBerta-large</label>
+                        </div>
+                        <div class="option"><input type="radio" class="radio" id="RoBerta-base" name="model_type"><label
+                                for="RoBerta-base">RoBerta-base</label>
+                        </div>
+                        <div class="option"><input type="radio" class="radio" id="Distilbert" name="model_type"><label
+                                for="Distilbert">Distilbert</label>
+                        </div>
+                        <div class="option"><input type="radio" class="radio" id="Bert-large" name="model_type"><label
+                                for="Bert-large">Bert-large</label>
+                        </div>
+                        <div class="option"><input type="radio" class="radio" id="Bert-base" name="model_type"><label
+                                for="Bert-base">Bert-base</label>
+                        </div>
+
+                    </div>
+                    <div class="selected">Select the model type</div>
+
+                </div>
+            </div>
+            <div class="relationship_search">
+                <h4>Relationship:</h4>
+                <div id="Relationship"><input type="text"></div>
+            </div>
+            <div class="seed_search">
+                <h4>Seed Entity:</h4>
+                <div id="Seed_Entity"><input type="text"></div>
+            </div>
+            <div class="submit_but"><a href="{{url_for( 'loading' )}}">Submit</a></div>
+        </section>
+
+
+
+        <section class="body_content">
+            <div class="whatis">
+                <div class="body_content_title">What is Language Model Net?</div>
+                <div class="body_content_body">
+                    <p>Given a pretrained LM (e.g., BERT, ROBERTA), our
+                        automatic framework extracts a KG from it in an efficient and scalable way—this results in a
+                        family
+                        of new KGs (referred to as, e.g., BERTNET, ROBERTANET) that permit a new extendable set of
+                        knowledge beyond the existing hand-annotated KGs such as ConceptNet.</p>
+                    <img src="../static/imgs/What is image.png" alt="">
+                </div>
+            </div>
+            <div class="ExampleRelation">
+                <div class="body_content_title">Example relation:</div>
+                <div class="body_content_body">
+                    <img src="../static/imgs/Example.png" alt="">
+                    <p>Here is the result from RoBERTaNet -- the relationship it presents is that “A can B but not god
+                        at”</p>
+
+                </div>
+            </div>
+            <div class="Development">
+                <div class="body_content_title">Development</div>
+                <div class="body_content_body">
+                    <p>The development of Language Model Net is contributed by UC San Diego, Carnegie Mellon University,
+                        and Mohamed bin Zayed University of Artificial Intelligence(MBZUAI). If you have any suggestions
+                        on our website or if you want to join the contribution of Language Model Net, please contact us
+                        via the footer's information. <br><br>The development is leaded by Eric Xing, Zhiting Hu, and
+                        several other people.</p>
+                    <img id="ucsd" src="../static/imgs/ucsd.png" alt="">
+                    <img id="cmu" src="../static/imgs/cmu.png" alt="">
+                    <img id="mbzuai" src="../static/imgs/mbzuai.png" alt="">
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <section class="footer_box">
+        <div class="w footer_body">
+            <div class="information">
+                <div id="contact_us">
+                    <p class="main_title">Contact Us</p>
+                    <p class="sub_content"><img src="../static/imgs/mail_outline.png" alt=""> 1234567@gmail.com</p>
+                    <p class="sub_content"><img src="../static/imgs/mail_outline.png" alt=""> 7654321@gmail.com</p>
+                    <p class="sub_content"><img src="../static/imgs/local_phone.png" alt=""> +123456789</p>
+                </div>
+                <div id="downloads">
+                    <p class="main_title">Downloads</p>
+                    <p class="sub_content"><a href="#"><img src="../static/imgs/file_download.png" alt=""></a>(88.88GB)
+                    </p>
+                </div>
+                <div id="query">
+                    <p class="main_title">Have any question?</p>
+                    <div>
+                        <div class="feedback_box"><input type="text"><span><a href="#">Send</a></span></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <ul class="bg-squares">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+
+
+    <script src="../static/js/home.js">
+
+
+
+    </script>
+</body>
+
+</html>
