@@ -129,8 +129,14 @@ body {
 
 }
 
-.search_box .model_search, .search_box .relationship_search, .search_box .seed_search {
+.search_box .model_search, .search_box .relationship_search, .search_box .seed_search, .search_box .add_entity, .search_box .min_entity {
     float: left;
+}
+
+.search_box .seed_search .entity_pair {
+    float: flex;
+    flex-direction: column;
+
 }
 
 .search_box .relationship_search, .search_box .seed_search {
@@ -140,6 +146,22 @@ body {
 .body_container .search_box h4, .search_box .relationship_search h4, .search_box .seed_search h4 {
     margin-top: 2px;
     margin-bottom: 2px;
+}
+
+.search_box .add_entity, .search_box .min_entity {
+    height: 20px;
+    width: 20px;
+    background-color: pink;
+    text-align: center;
+    border-radius: 8px;
+    color: white;
+    margin-right: 5px;
+    margin-top: 22px;
+    transition: all 1s;
+}
+
+.search_box .add_entity:hover, .search_box .min_entity:hover {
+    transform: rotate(180deg);
 }
 
 
@@ -233,7 +255,9 @@ body {
 }
 
 .search_box .seed_search #Seed_Entity input {
-    width: 379px;
+    width: 150px;
+    margin-right: 10px;
+    margin-bottom: 8px;
     height: 22px;
 
     border-radius: 8px;
