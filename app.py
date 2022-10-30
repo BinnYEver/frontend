@@ -1,8 +1,9 @@
 
 
 from apps import create_app
-from flask import render_template
-
+from flask import render_template, jsonify
+import os
+from demo import MAX_N_ENT_TUPLES, retrieve_results
 app = create_app()
 
 
@@ -22,8 +23,8 @@ def sign_up():
     return render_template('sign_up.html')
 
 
-@app.route('/resultER', methods=['POST', 'GET'])
-def resultER():
+@app.route('/resultER/<model_name>/<init_prompts_str>/<seed_ent_tuples_str>')
+def resultER(model_name, init_prompts_str, seed_ent_tuples_str):
     return render_template('resultER.html')
 
 
@@ -32,5 +33,41 @@ def loading():
     return render_template('loading.html')
 
 
+@app.route('/loading/<model_name>/<init_prompts_str>/<seed_ent_tuples_str>')
+def predict(model_name, init_prompts_str, seed_ent_tuples_str):
+    # init_prompts_str = init_prompts_str.replace(' ', '_')
+    search(
+        model_name=model_name,
+        init_prompts_str=init_prompts_str,
+        seed_ent_tuples_str=seed_ent_tuples_str)
+    return render_template('loading.html')
+
+
+@app.route('/update/<model_name>/<init_prompts_str>/<seed_ent_tuples_str>')
+def update(model_name, init_prompts_str, seed_ent_tuples_str):
+    # init_prompts_str = init_prompts_str.replace(' ', '_')
+    return jsonify(retrieve_results(
+        model_name=model_name,
+        init_prompts_str=init_prompts_str,
+        seed_ent_tuples_str=seed_ent_tuples_str))
+
+
+def search(model_name, init_prompts_str, seed_ent_tuples_str):
+    command = f'python demo.py' + \
+    f' --model_name {model_name}' + \
+    f' --init_prompts_str {init_prompts_str}' + \
+    f' --seed_ent_tuples_str {seed_ent_tuples_str}' + \
+    f' --max_n_ent_tuples {MAX_N_ENT_TUPLES}' + \
+    f' &'
+
+
+    print(command)
+    os.system(command)
+
+
 if __name__ == "__main__":
-    app.run()
+    # set port to 8000
+    app.run(host='0.0.0.0', port=8050, debug=True)
+
+
+    # app.run()

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>result page</title>
-    <link rel="shortcut icon" href="../static/favicon.png">
+    <link rel="shortcut icon" href="../../../../static/favicon.png">
     <link rel="stylesheet" href="/static/css/base.css">
     <link rel="stylesheet" href="/static/css/resultER.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +22,7 @@
         <div class="w nav_bar_body">
             <div class="fl">
                 <ul>
-                    <li><img src="../static/imgs/menu group.png" alt=""></li>
+                    <li><img src="../../../../static/imgs/menu group.png" alt=""></li>
                     <li id="DocumentID"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms/">Document</a>
                     </li>
                     <li id="FQID"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms/">F&Q</a></li>
@@ -35,9 +35,9 @@
             </div>
             <!-- <div class="fr">
                 <ul>
-                    <li><a href="{{ url_for('log_in') }}"><img src="../static/imgs/account_circle.png" alt=""></a>
+                    <li><a href="{{ url_for('log_in') }}"><img src="../../../../static/imgs/account_circle.png" alt=""></a>
                     <li><a href="{{ url_for('sign_up')}}" id="sign_up_btn">sign up</a></li>
-                    <li><a href="#"><img src="../static/imgs/notification_circle.png" alt=""></a></li>
+                    <li><a href="#"><img src="../../../../static/imgs/notification_circle.png" alt=""></a></li>
                     </li>
                 </ul>
             </div> -->
@@ -56,8 +56,6 @@
         </div>
         <div class="seed_entity_div">
             <span>Seed Entity:</span>
-            <span class="seed_entity_name">outfield & catch baseballs</span>
-            <span class="seed_entity_name">desk & work on</span>
         </div>
         <section class="search_box">
             <div class="model_search">
@@ -103,15 +101,15 @@
             </div>
             <a href="javascript:;" class="add_entity">+</a>
             <a href="javascript:;" class="min_entity">-</a>
-            <div class="submit_but"><a href="{{url_for( 'resultER' )}}">Submit</a></div>
+            <div class="submit_but">Submit</div>
         </section>
 
         <section class="result_tuples">
             <div class="head_table">
-                <span class="tuples_col">repsonse_dict</span>
+                <span class="tuples_col">Entity Pairs</span>
                 <span class="feedback_col">Feedback:</span>
             </div>
-
+            <!-- examples...
             <div class="each_tuple">
                 <span class="entity1">question</span>
                 <span class="each_tuple_RW">
@@ -121,9 +119,9 @@
                 <span class="entity2">answer question</span>
                 <span class="source_from">source:RoBERTa-large</span>
                 <span class="each_tuple_FB">
-                    <a href="javascript:;"><img src="../static/imgs/check.png" alt=""></a>
-                    <a href="javascript:;"><img src="../static/imgs/wrong.png" alt=""></a>
-                    <a href="javascript:;"><img src="../static/imgs/NA.png" alt=""></a>
+                    <a href="javascript:;"><img src="../../../../static/imgs/check.png" alt=""></a>
+                    <a href="javascript:;"><img src="../../../../static/imgs/wrong.png" alt=""></a>
+                    <a href="javascript:;"><img src="../../../../static/imgs/NA.png" alt=""></a>
                 </span>
             </div>
 
@@ -136,9 +134,9 @@
                 <span class="entity2">face mask</span>
                 <span class="source_from">source:RoBERTa-large</span>
                 <span class="each_tuple_FB">
-                    <a href="javascript:;"><img src="../static/imgs/check.png" alt=""></a>
-                    <a href="javascript:;"><img src="../static/imgs/wrong.png" alt=""></a>
-                    <a href="javascript:;"><img src="../static/imgs/NA.png" alt=""></a>
+                    <a href="javascript:;"><img src="../../../../static/imgs/check.png" alt=""></a>
+                    <a href="javascript:;"><img src="../../../../static/imgs/wrong.png" alt=""></a>
+                    <a href="javascript:;"><img src="../../../../static/imgs/NA.png" alt=""></a>
                 </span>
             </div>
 
@@ -151,9 +149,9 @@
                 <span class="entity2">play football</span>
                 <span class="source_from">source:RoBERTa-large</span>
                 <span class="each_tuple_FB">
-                    <a href="javascript:;"><img src="../static/imgs/check.png" alt=""></a>
-                    <a href="javascript:;"><img src="../static/imgs/wrong.png" alt=""></a>
-                    <a href="javascript:;"><img src="../static/imgs/NA.png" alt=""></a>
+                    <a href="javascript:;"><img src="../../../../static/imgs/check.png" alt=""></a>
+                    <a href="javascript:;"><img src="../../../../static/imgs/wrong.png" alt=""></a>
+                    <a href="javascript:;"><img src="../../../../static/imgs/NA.png" alt=""></a>
                 </span>
             </div>
 
@@ -166,9 +164,9 @@
                 <span class="entity2">social media</span>
                 <span class="source_from">source:RoBERTa-large</span>
                 <span class="each_tuple_FB">
-                    <a href="javascript:;"><img src="../static/imgs/check.png" alt=""></a>
-                    <a href="javascript:;"><img src="../static/imgs/wrong.png" alt=""></a>
-                    <a href="javascript:;"><img src="../static/imgs/NA.png" alt=""></a>
+                    <a href="javascript:;"><img src="../../../../static/imgs/check.png" alt=""></a>
+                    <a href="javascript:;"><img src="../../../../static/imgs/wrong.png" alt=""></a>
+                    <a href="javascript:;"><img src="../../../../static/imgs/NA.png" alt=""></a>
                 </span>
             </div>
 
@@ -181,12 +179,12 @@
                 <span class="entity2">cross roads</span>
                 <span class="source_from">source:RoBERTa-large</span>
                 <span class="each_tuple_FB">
-                    <a href="javascript:;"><img src="../static/imgs/check.png" alt=""></a>
-                    <a href="javascript:;"><img src="../static/imgs/wrong.png" alt=""></a>
-                    <a href="javascript:;"><img src="../static/imgs/NA.png" alt=""></a>
+                    <a href="javascript:;"><img src="../../../../static/imgs/check.png" alt=""></a>
+                    <a href="javascript:;"><img src="../../../../static/imgs/wrong.png" alt=""></a>
+                    <a href="javascript:;"><img src="../../../../static/imgs/NA.png" alt=""></a>
                 </span>
             </div>
-
+            -->
 
         </section>
 
@@ -200,20 +198,19 @@
             <div class="information">
                 <div id="contact_us">
                     <p class="main_title">Contact Us</p>
-                    <p class="sub_content"><img src="../static/imgs/mail_outline.png" alt=""> 1234567@gmail.com</p>
-                    <p class="sub_content"><img src="../static/imgs/mail_outline.png" alt=""> 7654321@gmail.com</p>
-                    <p class="sub_content"><img src="../static/imgs/local_phone.png" alt=""> +123456789</p>
+                    <p class="sub_content"><img src="../../../../static/imgs/mail_outline.png" alt=""> s5hao@ucsd.edu</p>
+                    <p class="sub_content"><img src="../../../../static/imgs/mail_outline.png" alt=""> 7654321@gmail.com</p>
+                    <p class="sub_content"><img src="../../../../static/imgs/local_phone.png" alt=""> +123456789</p>
                 </div>
                 <div id="downloads">
                     <p class="main_title">Downloads</p>
-                    <p class="sub_content"><a href="#"><img src="../static/imgs/file_download.png" alt=""></a>(88.88GB)
+                    <p class="sub_content"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms"><img src="../../../../static/imgs/file_download.png" alt=""></a>(Github)
                     </p>
                 </div>
                 <div id="query">
                     <p class="main_title">Have any question?</p>
                     <div>
                         <div class="feedback_box"><input type="text"><span><a href="#">Send</a></span></div>
-
                     </div>
                 </div>
             </div>
@@ -232,8 +229,8 @@
     </ul>
 
 
-
-    <script src="../static/js/resultER.js">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="../../../../static/js/resultER.js">
 
 
 

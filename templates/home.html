@@ -49,45 +49,47 @@
                 <h4>Model Type:</h4>
                 <div id="Model_type">
                     <div class="options-container">
-                        <div class="option"><input type="radio" class="radio" id="RoBerta-large"
-                                name="model_type"><label for="RoBerta-large">RoBerta-large</label>
+                        <div class="option"><input type="radio" class="radio" id="roberta-base"
+                                name="model_type"><label for="roberta-base">roberta-base</label>
                         </div>
-                        <div class="option"><input type="radio" class="radio" id="RoBerta-base" name="model_type"><label
-                                for="RoBerta-base">RoBerta-base</label>
+                        <div class="option"><input type="radio" class="radio" id="bert-base-cased" name="model_type"><label
+                                for="bert-base-cased">bert-base-cased</label>
                         </div>
-                        <div class="option"><input type="radio" class="radio" id="Distilbert" name="model_type"><label
-                                for="Distilbert">Distilbert</label>
+                        <div class="option"><input type="radio" class="radio" id="distilbert-base-uncased" name="model_type"><label
+                                for="distilbert-base-uncased">distilbert-base-uncased</label>
                         </div>
-                        <div class="option"><input type="radio" class="radio" id="Bert-large" name="model_type"><label
-                                for="Bert-large">Bert-large</label>
+                        <div class="option"><input type="radio" class="radio" id="bert-large-cased" name="model_type"><label
+                                for="bert-large-cased">bert-large-cased</label>
                         </div>
-                        <div class="option"><input type="radio" class="radio" id="Bert-base" name="model_type"><label
-                                for="Bert-base">Bert-base</label>
+                        <div class="option"><input type="radio" class="radio" id="roberta-large" name="model_type"><label
+                                for="roberta-large">roberta-large</label>
                         </div>
-
                     </div>
-                    <div class="selected">Select the model type</div>
+                    <div class="selected">distilbert-base-uncased</div>
 
                 </div>
             </div>
             <div class="relationship_search">
                 <h4>Relationship:</h4>
-                <div id="Relationship"><input type="text"></div>
+                <div id="Relationship"><input type="text" value="A sells B"></div>
             </div>
             <div class="seed_search">
                 <h4>Seed Entity:</h4>
                 <div id="Seed_Entity">
                     <div class="entity_pair">
-                        <div class="entity_pair_inputbox"><input type="text"><input type="text"></div>
-                        <div class="entity_pair_inputbox"><input type="text"><input type="text"></div>
-                        <div class="entity_pair_inputbox"><input type="text"><input type="text"></div>
+                        <div class="entity_pair_inputbox"><input type="text" value="apple"><input type="text" value="iphone"></div>
+                        <div class="entity_pair_inputbox"><input type="text" value="tesla"><input type="text" value="electronic vehicle"></div>
+                        <div class="entity_pair_inputbox"><input type="text" value="nike"><input type="text" value="sneaker"></div>
 
                     </div>
                 </div>
             </div>
             <a href="javascript:;" class="add_entity">+</a>
             <a href="javascript:;" class="min_entity">-</a>
+            <!--
             <div class="submit_but"><a href="{{url_for( 'loading' )}}">Submit</a></div>
+            -->
+            <div class="submit_but">Submit</div>
         </section>
 
 
@@ -167,7 +169,8 @@
     </ul>
 
 
-
+    <!--load jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="../static/js/home.js">
 
 

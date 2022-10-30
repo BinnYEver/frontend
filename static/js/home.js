@@ -26,7 +26,29 @@ optionsList.forEach(e => {
 });
 
 submit_but.addEventListener('click', () => {
-    location.href = "/loading"
+    
+    var target_url = "/loading/"
+    var model_name = $("#Model_type .selected")[0].innerHTML;
+    target_url += model_name + "/";
+    var prompt = $("#Relationship")[0].children[0].value;
+    target_url += prompt + "/";
+    var entity_pairs = $(".entity_pair")[0].children;
+    for(var i = 0; i < entity_pairs.length; i++) {
+        var entity_pair = entity_pairs[i];
+        var head_entity = entity_pair.children[0].value;
+        var tail_entity = entity_pair.children[1].value;
+        target_url += head_entity + "~" + tail_entity;
+        if (i < entity_pairs.length - 1) {
+            target_url += "^";
+        }
+        console.log(target_url)
+        //"flotation_device~boat^water~soft_drink^gear~car^giraffes~africa^trousers~suitcase"
+    }
+    target_url = target_url.replaceAll(" ", "_");
+    console.log(target_url);
+    // exit(0);
+    location.href = target_url;
+    // http://10.127.7.234:8050/loading/Distilbert/dasdg/a_b~%5Ec_d~%5Ee_f~
 })
 
 

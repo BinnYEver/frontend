@@ -495,7 +495,7 @@ body {
 
 .footer_box .footer_body .information #contact_us p img,
 .footer_box .footer_body .information #downloads p img {
-    vertical-align: middle;
+    vertical-align: right;
     margin-right: 4px;
 }
 
