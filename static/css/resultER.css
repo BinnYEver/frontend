@@ -127,7 +127,9 @@ body {
     font: normal 700 20px 'Poppins', sans-serif;
 }
 
+
 .result_board .model_type_div, .result_board .relationship_div, .result_board .seed_entity_div {
+    width: 500px;
     margin-left: 33%;
     margin-bottom: 5px;
 }
@@ -173,6 +175,7 @@ body {
     padding-left: 15px;
     padding-right: 15px;
     margin-left: 15px;
+    margin-bottom: 8px;
     color: #000;
     font: normal 300 12px 'Poppins', sans-serif;
     border-radius: 10px;
@@ -192,8 +195,8 @@ body {
 .search_box {
 
     margin: 0 auto;
-    margin-top: 160px;
-    height: 55px;
+    margin-top: 100px;
+    height: 200px;
     width: 994px;
 
 }
@@ -436,7 +439,7 @@ body {
 .each_tuple .each_tuple_RW {
     display: flex;
     flex-direction: column;
-    width: 15%;
+    width: 25%;
     text-align: center;
 }
 
