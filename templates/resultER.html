@@ -23,14 +23,18 @@
             <div class="fl">
                 <ul>
                     <li><img src="../../../../static/imgs/menu group.png" alt=""></li>
-                    <li id="DocumentID"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms/">Document</a>
+                    <li id="DocumentID"><a href="https://arxiv.org/pdf/2206.14268.pdf">Paper</a>
                     </li>
-                    <li id="FQID"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms/">F&Q</a></li>
-                    <li id="AboutID"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms/">About</a></li>
+                    <li id="FQID"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms/">Github</a></li>
+                    <li id="AboutID"><a
+                            href="https://github.com/tanyuqian/knowledge-harvest-from-lms/blob/master/README.md">README</a>
+                    </li>
                 </ul>
             </div>
             <div id="main_title">
-                <h1>Language Model Net</h1>
+                <a href="{{ url_for('index') }}">
+                    <h1>Language Model Net</h1>
+                </a>
                 <p>-- harvest kowledge graphs from pretrained language models --</p>
             </div>
             <!-- <div class="fr">
@@ -103,7 +107,9 @@
         <div class="seed_entity_div">
             <span>Seed Entity:</span>
         </div>
-
+        <div class="download_but">
+            <a href="javascript:;">Download Tuples</a>
+        </div>
 
         <section class="result_tuples">
             <div class="head_table">

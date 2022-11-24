@@ -477,6 +477,24 @@ body {
 }
 
 
+.result_board .download_but {
+    margin-left: 50%;
+    width: 150px;
+    height: 20px;
+    text-align: center;
+    background: #ffa99f;
+    font: normal 400 12px 'Poppins', sans-serif;
+    border-radius: 8px;
+}
+
+.result_board .download_but a {
+    color: rgba(255, 255, 255, 1);
+}
+
+.result_board .download_but:hover {
+    background-color: #f04916;
+}
+
 .footer_box {
     min-height: 290px;
     background-color: rgba(62, 62, 62, 1);

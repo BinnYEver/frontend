@@ -23,14 +23,18 @@
             <div class="fl">
                 <ul>
                     <li><img src="../static/imgs/menu group.png" alt=""></li>
-                    <li id="DocumentID"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms/">Document</a>
+                    <li id="DocumentID"><a href="https://arxiv.org/pdf/2206.14268.pdf">Paper</a>
                     </li>
-                    <li id="FQID"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms/">F&Q</a></li>
-                    <li id="AboutID"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms/">About</a></li>
+                    <li id="FQID"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms/">Github</a></li>
+                    <li id="AboutID"><a
+                            href="https://github.com/tanyuqian/knowledge-harvest-from-lms/blob/master/README.md">README</a>
+                    </li>
                 </ul>
             </div>
             <div id="main_title">
-                <h1>Language Model Net</h1>
+                <a href="{{ url_for('index') }}">
+                    <h1>Language Model Net</h1>
+                </a>
                 <p>-- harvest kowledge graphs from pretrained language models --</p>
             </div>
             <!-- <div class="fr">
@@ -49,20 +53,20 @@
                 <h4>Model Type:</h4>
                 <div id="Model_type">
                     <div class="options-container">
-                        <div class="option"><input type="radio" class="radio" id="roberta-base"
-                                name="model_type"><label for="roberta-base">roberta-base</label>
+                        <div class="option"><input type="radio" class="radio" id="roberta-base" name="model_type"><label
+                                for="roberta-base">roberta-base</label>
                         </div>
-                        <div class="option"><input type="radio" class="radio" id="bert-base-cased" name="model_type"><label
-                                for="bert-base-cased">bert-base-cased</label>
+                        <div class="option"><input type="radio" class="radio" id="bert-base-cased"
+                                name="model_type"><label for="bert-base-cased">bert-base-cased</label>
                         </div>
-                        <div class="option"><input type="radio" class="radio" id="distilbert-base-uncased" name="model_type"><label
-                                for="distilbert-base-uncased">distilbert-base-uncased</label>
+                        <div class="option"><input type="radio" class="radio" id="distilbert-base-uncased"
+                                name="model_type"><label for="distilbert-base-uncased">distilbert-base-uncased</label>
                         </div>
-                        <div class="option"><input type="radio" class="radio" id="bert-large-cased" name="model_type"><label
-                                for="bert-large-cased">bert-large-cased</label>
+                        <div class="option"><input type="radio" class="radio" id="bert-large-cased"
+                                name="model_type"><label for="bert-large-cased">bert-large-cased</label>
                         </div>
-                        <div class="option"><input type="radio" class="radio" id="roberta-large" name="model_type"><label
-                                for="roberta-large">roberta-large</label>
+                        <div class="option"><input type="radio" class="radio" id="roberta-large"
+                                name="model_type"><label for="roberta-large">roberta-large</label>
                         </div>
                     </div>
                     <div class="selected">distilbert-base-uncased</div>
@@ -77,9 +81,12 @@
                 <h4>Seed Entity:</h4>
                 <div id="Seed_Entity">
                     <div class="entity_pair">
-                        <div class="entity_pair_inputbox"><input type="text" value="apple"><input type="text" value="iphone"></div>
-                        <div class="entity_pair_inputbox"><input type="text" value="tesla"><input type="text" value="electronic vehicle"></div>
-                        <div class="entity_pair_inputbox"><input type="text" value="nike"><input type="text" value="sneaker"></div>
+                        <div class="entity_pair_inputbox"><input type="text" value="apple"><input type="text"
+                                value="iphone"></div>
+                        <div class="entity_pair_inputbox"><input type="text" value="tesla"><input type="text"
+                                value="electronic vehicle"></div>
+                        <div class="entity_pair_inputbox"><input type="text" value="nike"><input type="text"
+                                value="sneaker"></div>
 
                     </div>
                 </div>
