@@ -391,7 +391,57 @@ body {
     letter-spacing: 2px;
 }
 
+.show_prompt_socre {
+    height: 100px;
+    width: 80%;
+    margin: 20px auto;
+    overflow: auto;
+    background-color: pink;
+    border-radius: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
 
+.show_prompt_socre::-webkit-scrollbar {
+    width: 10px;
+    height: 100%;
+    border-radius: 8px;
+    background: #ffacac;
+
+}
+
+.show_prompt_socre::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #fe9999;
+}
+
+.show_prompt_socre::-webkit-scrollbar-thumb:hover {
+    background-color: #fc6666;
+}
+
+.show_prompt_socre .prompt {
+    float: left;
+}
+
+.show_prompt_socre .prompt .title, .show_prompt_socre .score .title {
+    color: white;
+    font: normal 700 16px 'Poppins', sans-serif;
+}
+
+.show_prompt_socre .prompt .prompt_entity {
+    color: white;
+    font: normal 400 12px 'Poppins', sans-serif;
+}
+
+.show_prompt_socre .score {
+    float: left;
+    margin-left: 50%;
+}
+
+.show_prompt_socre .score .score_entity {
+    color: white;
+    font: normal 400 12px 'Poppins', sans-serif;
+}
 
 .result_tuples {
     /* box-sizing: border-box; */
