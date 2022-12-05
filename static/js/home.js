@@ -26,14 +26,14 @@ optionsList.forEach(e => {
 });
 
 submit_but.addEventListener('click', () => {
-    
+
     var target_url = "/loading/"
     var model_name = $("#Model_type .selected")[0].innerHTML;
     target_url += model_name + "/";
     var prompt = $("#Relationship")[0].children[0].value;
     target_url += prompt + "/";
     var entity_pairs = $(".entity_pair")[0].children;
-    for(var i = 0; i < entity_pairs.length; i++) {
+    for (var i = 0; i < entity_pairs.length; i++) {
         var entity_pair = entity_pairs[i];
         var head_entity = entity_pair.children[0].value;
         var tail_entity = entity_pair.children[1].value;
@@ -53,16 +53,18 @@ submit_but.addEventListener('click', () => {
 
 
 add_search.addEventListener("click", () => {
+    if (parent_entity_pair.childElementCount < 5) {
+        var new_pairs = document.createElement("div");
+        var text_field1 = document.createElement("input");
+        var text_field2 = document.createElement("input");
+        new_pairs.setAttribute("class", "entity_pair_inputbox");
+        text_field1.setAttribute("type", "text");
+        text_field2.setAttribute("type", "text");
+        new_pairs.appendChild(text_field1);
+        new_pairs.appendChild(text_field2);
+        parent_entity_pair.appendChild(new_pairs);
+    }
 
-    var new_pairs = document.createElement("div");
-    var text_field1 = document.createElement("input");
-    var text_field2 = document.createElement("input");
-    new_pairs.setAttribute("class", "entity_pair_inputbox");
-    text_field1.setAttribute("type", "text");
-    text_field2.setAttribute("type", "text");
-    new_pairs.appendChild(text_field1);
-    new_pairs.appendChild(text_field2);
-    parent_entity_pair.appendChild(new_pairs);
 
 
 })

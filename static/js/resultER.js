@@ -24,7 +24,7 @@ window.onload = function () {
     }
     // console.log(entity_pairs)
     var seed_div = $(".seed_entity_div")[0];
-    for(var i = 0; i < entity_pairs.length; i++) {
+    for (var i = 0; i < entity_pairs.length; i++) {
         var new_pairs = document.createElement("div");
         var new_span = document.createElement("span");
         var text_field1 = document.createElement("input");
@@ -41,12 +41,12 @@ window.onload = function () {
         seed_div.appendChild(new_span);
         parent_entity_pair.appendChild(new_pairs);
     }
-    
+
     try {
-        jqxhr = $.getJSON(cur_url.replace("resultER", "update"), function() {
+        jqxhr = $.getJSON(cur_url.replace("resultER", "update"), function () {
             console.log("sent");
         });
-        jqxhr.done(function(data) {
+        jqxhr.done(function (data) {
             console.log("success");
             // console.log(jqxhr);
             console.log(jqxhr.responseJSON);
@@ -73,8 +73,8 @@ window.onload = function () {
                 new_source.innerHTML = model_name;
                 new_arrow.appendChild(new_rel);
                 new_arrow.appendChild(new_weight);
-                
-                
+
+
                 new_span.setAttribute("class", "each_tuple");
                 new_entity_span_1.setAttribute("class", "entity1");
                 new_entity_span_2.setAttribute("class", "entity2");
@@ -87,13 +87,13 @@ window.onload = function () {
                 new_span.appendChild(new_source);
                 new_span.innerHTML += `
                     <span class="each_tuple_FB">
-                    <a href="javascript:;"><img src="../../../../static/imgs/check.png" alt=""></a>
-                    <a href="javascript:;"><img src="../../../../static/imgs/wrong.png" alt=""></a>
-                    <a href="javascript:;"><img src="../../../../static/imgs/NA.png" alt=""></a>
+                    <a href="" class="check">✓</a>
+                    <a href="" class="wrong">X</a>
+                    <a href="" class="notknown">N/A</a>
                     </span>`
-                ;
+                    ;
                 target_div.appendChild(new_span);
-            
+
             }
         });
     } catch (error) {
@@ -113,16 +113,18 @@ optionsList.forEach(e => {
 });
 
 add_search.addEventListener("click", () => {
+    if (parent_entity_pair.childElementCount < 5) {
+        var new_pairs = document.createElement("div");
+        var text_field1 = document.createElement("input");
+        var text_field2 = document.createElement("input");
+        new_pairs.setAttribute("class", "entity_pair_inputbox");
+        text_field1.setAttribute("type", "text");
+        text_field2.setAttribute("type", "text");
+        new_pairs.appendChild(text_field1);
+        new_pairs.appendChild(text_field2);
+        parent_entity_pair.appendChild(new_pairs);
+    }
 
-    var new_pairs = document.createElement("div");
-    var text_field1 = document.createElement("input");
-    var text_field2 = document.createElement("input");
-    new_pairs.setAttribute("class", "entity_pair_inputbox");
-    text_field1.setAttribute("type", "text");
-    text_field2.setAttribute("type", "text");
-    new_pairs.appendChild(text_field1);
-    new_pairs.appendChild(text_field2);
-    parent_entity_pair.appendChild(new_pairs);
 
 
 })
@@ -137,14 +139,14 @@ min_search.addEventListener("click", () => {
 
 
 submit_but.addEventListener('click', () => {
-    
+
     var target_url = "/loading/"
     var model_name = $("#Model_type .selected")[0].innerHTML;
     target_url += model_name + "/";
     var prompt = $("#Relationship")[0].children[0].value;
     target_url += prompt + "/";
     var entity_pairs = $(".entity_pair")[0].children;
-    for(var i = 0; i < entity_pairs.length; i++) {
+    for (var i = 0; i < entity_pairs.length; i++) {
         var entity_pair = entity_pairs[i];
         var head_entity = entity_pair.children[0].value;
         var tail_entity = entity_pair.children[1].value;

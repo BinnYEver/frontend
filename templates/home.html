@@ -22,15 +22,19 @@
         <div class="w nav_bar_body">
             <div class="fl">
                 <ul>
-                    <li><img src="../static/imgs/menu group.png" alt=""></li>
-                    <li id="DocumentID"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms/">Document</a>
+                    <!-- <li><img src="../static/imgs/menu group.png" alt=""></li> -->
+                    <li id="FQID"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms/">Github</a></li>
+                    <li id="AboutID"><a
+                            href="https://github.com/tanyuqian/knowledge-harvest-from-lms/blob/master/README.md">About</a>
                     </li>
-                    <li id="FQID"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms/">F&Q</a></li>
-                    <li id="AboutID"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms/">About</a></li>
+                    <li id="DocumentID"><a href="https://arxiv.org/pdf/2206.14268.pdf">Papers</a>
+                    </li>
                 </ul>
             </div>
             <div id="main_title">
-                <h1>Language Model Net</h1>
+                <a href="{{ url_for('index') }}">
+                    <h1>Language Model Net</h1>
+                </a>
                 <p>-- harvest kowledge graphs from pretrained language models --</p>
             </div>
             <!-- <div class="fr">
@@ -49,20 +53,20 @@
                 <h4>Model Type:</h4>
                 <div id="Model_type">
                     <div class="options-container">
-                        <div class="option"><input type="radio" class="radio" id="roberta-base"
-                                name="model_type"><label for="roberta-base">roberta-base</label>
+                        <div class="option"><input type="radio" class="radio" id="roberta-base" name="model_type"><label
+                                for="roberta-base">roberta-base</label>
                         </div>
-                        <div class="option"><input type="radio" class="radio" id="bert-base-cased" name="model_type"><label
-                                for="bert-base-cased">bert-base-cased</label>
+                        <div class="option"><input type="radio" class="radio" id="bert-base-cased"
+                                name="model_type"><label for="bert-base-cased">bert-base-cased</label>
                         </div>
-                        <div class="option"><input type="radio" class="radio" id="distilbert-base-uncased" name="model_type"><label
-                                for="distilbert-base-uncased">distilbert-base-uncased</label>
+                        <div class="option"><input type="radio" class="radio" id="distilbert-base-uncased"
+                                name="model_type"><label for="distilbert-base-uncased">distilbert-base-uncased</label>
                         </div>
-                        <div class="option"><input type="radio" class="radio" id="bert-large-cased" name="model_type"><label
-                                for="bert-large-cased">bert-large-cased</label>
+                        <div class="option"><input type="radio" class="radio" id="bert-large-cased"
+                                name="model_type"><label for="bert-large-cased">bert-large-cased</label>
                         </div>
-                        <div class="option"><input type="radio" class="radio" id="roberta-large" name="model_type"><label
-                                for="roberta-large">roberta-large</label>
+                        <div class="option"><input type="radio" class="radio" id="roberta-large"
+                                name="model_type"><label for="roberta-large">roberta-large</label>
                         </div>
                     </div>
                     <div class="selected">distilbert-base-uncased</div>
@@ -80,6 +84,12 @@
                         <div class="entity_pair_inputbox"><input type="text" value="gym"><input type="text" value="work out"></div>
                         <div class="entity_pair_inputbox"><input type="text" value="library"><input type="text" value="study"></div>
                         <div class="entity_pair_inputbox"><input type="text" value="office"><input type="text" value="work"></div>
+                        <div class="entity_pair_inputbox"><input type="text" value="apple"><input type="text"
+                                value="iphone"></div>
+                        <div class="entity_pair_inputbox"><input type="text" value="tesla"><input type="text"
+                                value="electronic vehicle"></div>
+                        <div class="entity_pair_inputbox"><input type="text" value="nike"><input type="text"
+                                value="sneaker"></div>
 
                     </div>
                 </div>
@@ -137,22 +147,20 @@
             <div class="information">
                 <div id="contact_us">
                     <p class="main_title">Contact Us</p>
-                    <p class="sub_content"><img src="../static/imgs/mail_outline.png" alt=""> 1234567@gmail.com</p>
-                    <p class="sub_content"><img src="../static/imgs/mail_outline.png" alt=""> 7654321@gmail.com</p>
-                    <p class="sub_content"><img src="../static/imgs/local_phone.png" alt=""> +123456789</p>
+                    <p class="sub_content"><img src="../static/imgs/mail_outline.png" alt=""> lmnet@gmail.com </p>
                 </div>
-                <div id="downloads">
-                    <p class="main_title">Downloads</p>
-                    <p class="sub_content"><a href="#"><img src="../static/imgs/file_download.png" alt=""></a>(88.88GB)
+                <!-- <div id="downloads">
+                    <p class="main_title"> </p>
+                    <p class="sub_content"><img src="../static/imgs/local_phone.png" alt=""> +(619)9549370--Bin Ni</p>
                     </p>
-                </div>
-                <div id="query">
+                </div> -->
+                <!-- <div id="query">
                     <p class="main_title">Have any question?</p>
                     <div>
                         <div class="feedback_box"><input type="text"><span><a href="#">Send</a></span></div>
 
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>

@@ -22,15 +22,20 @@
         <div class="w nav_bar_body">
             <div class="fl">
                 <ul>
-                    <li><img src="../../../../static/imgs/menu group.png" alt=""></li>
-                    <li id="DocumentID"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms/">Document</a>
+                    <!-- <li><img src="../../../../static/imgs/menu group.png" alt=""></li> -->
+
+                    <li id="FQID"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms/">Github</a></li>
+                    <li id="AboutID"><a
+                            href="https://github.com/tanyuqian/knowledge-harvest-from-lms/blob/master/README.md">About</a>
                     </li>
-                    <li id="FQID"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms/">F&Q</a></li>
-                    <li id="AboutID"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms/">About</a></li>
+                    <li id="DocumentID"><a href="https://arxiv.org/pdf/2206.14268.pdf">Papers</a>
+                    </li>
                 </ul>
             </div>
             <div id="main_title">
-                <h1>Language Model Net</h1>
+                <a href="{{ url_for('index') }}">
+                    <h1>Language Model Net</h1>
+                </a>
                 <p>-- harvest kowledge graphs from pretrained language models --</p>
             </div>
             <!-- <div class="fr">
@@ -103,7 +108,67 @@
         <div class="seed_entity_div">
             <span>Seed Entity:</span>
         </div>
+        <div class="download_but">
+            <a href="javascript:;">Download Tuples</a>
+        </div>
 
+        <div class="show_prompt_socre">
+            <div class="prompt">
+                <div class="title">Prompt Column</div>
+                <div class="prompt_entity">
+                    prompt_entity1
+                </div>
+                <div class="prompt_entity">
+                    prompt_entity2
+                </div>
+                <div class="prompt_entity">
+                    prompt_entity3
+                </div>
+                <div class="prompt_entity">
+                    prompt_entity4
+                </div>
+                <div class="prompt_entity">
+                    prompt_entity5
+                </div>
+                <div class="prompt_entity">
+                    prompt_entity6
+                </div>
+                <div class="prompt_entity">
+                    prompt_entity7
+                </div>
+                <div class="prompt_entity">
+                    prompt_entity8
+                </div>
+                <div class="prompt_entity">
+                    prompt_entity9
+                </div>
+                <div class="prompt_entity">
+                    prompt_entity10
+                </div>
+                <div class="prompt_entity">
+                    prompt_entity11
+                </div>
+                <div class="prompt_entity">
+                    prompt_entity12
+                </div>
+
+            </div>
+            <div class="score">
+                <div class="title">Score Column</div>
+                <div class="score_entity">score1</div>
+                <div class="score_entity">score2</div>
+                <div class="score_entity">score3</div>
+                <div class="score_entity">score4</div>
+                <div class="score_entity">score5</div>
+                <div class="score_entity">score6</div>
+                <div class="score_entity">score7</div>
+                <div class="score_entity">score8</div>
+                <div class="score_entity">score9</div>
+                <div class="score_entity">score10</div>
+                <div class="score_entity">score11</div>
+                <div class="score_entity">score12</div>
+            </div>
+        </div>
 
         <section class="result_tuples">
             <div class="head_table">
@@ -199,24 +264,19 @@
             <div class="information">
                 <div id="contact_us">
                     <p class="main_title">Contact Us</p>
-                    <p class="sub_content"><img src="../../../../static/imgs/mail_outline.png" alt=""> s5hao@ucsd.edu
-                    </p>
-                    <p class="sub_content"><img src="../../../../static/imgs/mail_outline.png" alt=""> 7654321@gmail.com
-                    </p>
-                    <p class="sub_content"><img src="../../../../static/imgs/local_phone.png" alt=""> +123456789</p>
+                    <p class="sub_content"><img src="../static/imgs/mail_outline.png" alt=""> lmnet@gmail.com </p>
                 </div>
-                <div id="downloads">
-                    <p class="main_title">Downloads</p>
-                    <p class="sub_content"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms"><img
-                                src="../../../../static/imgs/file_download.png" alt=""></a>(Github)
+                <!-- <div id="downloads">
+                    <p class="main_title"> </p>
+                    <p class="sub_content"><img src="../static/imgs/local_phone.png" alt=""> +(619)9549370--Bin Ni</p>
                     </p>
-                </div>
-                <div id="query">
+                </div> -->
+                <!-- <div id="query">
                     <p class="main_title">Have any question?</p>
                     <div>
                         <div class="feedback_box"><input type="text"><span><a href="#">Send</a></span></div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
