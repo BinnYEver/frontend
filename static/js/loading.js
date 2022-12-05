@@ -23,7 +23,7 @@ var sample_json = {
 }
 // var url = 'http://query.yahooapis.com/v1/public/yql?q=select%20%2a%20from%20yahoo.finance.quotes%20WHERE%20symbol%3D%27WRC%27&format=json&diagnostics=true&env=store://datatables.org/alltableswithkeys&callback';
 
-const REFRESH_TIME = 3000;
+const REFRESH_TIME = 4000;
 function keep_refresh(url, state=0) {
     var jqxhr = 0;
     var instructions = [
@@ -32,6 +32,7 @@ function keep_refresh(url, state=0) {
         "Searching for entity pairs..."
     ]
     h2.innerText = instructions[state];
+    console.log(url);
     try {
         jqxhr = $.getJSON(url, function() {
             console.log("sent");
@@ -91,7 +92,7 @@ function keep_refresh(url, state=0) {
 window.onload = function () {
     // setTimeout(function () { location.href = "/resultER" }, 40000);
     var cur_url = window.location.href;
-    var update_url = cur_url.replace("http://10.127.7.234:8050/loading/", "/update/")
+    var update_url = cur_url.replace("/loading/", "/update/")
     console.log(update_url)
     keep_refresh(update_url);
 }
