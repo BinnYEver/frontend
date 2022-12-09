@@ -89,9 +89,9 @@ window.onload = function () {
                 new_span.appendChild(new_source);
                 new_span.innerHTML += `
                     <span class="each_tuple_FB">
-                    <a href="" class="check">✓</a>
-                    <a href="" class="wrong">X</a>
-                    <a href="" class="notknown">N/A</a>
+                    <a href="" class="check but">✓</a>
+                    <a href="" class="wrong but">X</a>
+                    <a href="" class="notknown but">N/A</a>
                     </span>`
                     ;
                 target_div.appendChild(new_span);
