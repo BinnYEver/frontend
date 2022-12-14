@@ -72,7 +72,18 @@ body {
     font: normal 700 12px 'Poppins', sans-serif;
 }
 
-.nav_bar_box .w .fl ul #DocumentID:hover, .nav_bar_box .w .fl ul #FQID:hover, .nav_bar_box .w .fl ul #AboutID:hover {
+.nav_bar_box .w .fr ul li a {
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+    font: normal 700 12px 'Poppins', sans-serif;
+}
+
+.nav_bar_box .w .fl ul #DocumentID:hover, .nav_bar_box .w .fl ul #Github:hover, .nav_bar_box .w .fl ul #AboutID:hover {
+    border-bottom: 2px solid #00eeff;
+}
+
+.nav_bar_box .w .fr ul #tuple_download:hover {
     border-bottom: 2px solid #00eeff;
 }
 
@@ -458,6 +469,22 @@ body {
 .result_tuples .tuples_col, .result_board .feedback_col {
     font: normal 700 24px 'Poppins', sans-serif;
     color: #000;
+}
+
+.result_tuples .feedback_col {
+    position: relative;
+}
+
+.result_tuples .feedback_col:hover::before {
+    position: absolute;
+    top: -130px;
+    left: 0;
+    color: #fff;
+    font-size: .8em;
+    background: #1ac4e6;
+    padding: 5px;
+    border-radius: 5px;
+    content: 'We are looking forwards to getting the feedback from you';
 }
 
 .result_tuples .tuples_col {

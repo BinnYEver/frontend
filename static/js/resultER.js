@@ -5,6 +5,8 @@ const add_search = document.querySelector(".add_entity");
 const min_search = document.querySelector(".min_entity");
 const parent_entity_pair = document.querySelector(".entity_pair");
 const submit_but = document.querySelector('.submit_but');
+let audio_sound = document.querySelectorAll("audio");
+let but_list = document.querySelectorAll(".but");
 
 var funDownload = function (content, filename) {
     // create hidden download link
@@ -121,9 +123,9 @@ window.onload = function () {
                 new_span.appendChild(new_source);
                 new_span.innerHTML += `
                     <span class="each_tuple_FB">
-                    <a href="" class="check">✓</a>
-                    <a href="" class="wrong">X</a>
-                    <a href="" class="notknown">N/A</a>
+                    <a href="" class="check but">✓</a>
+                    <a href="" class="wrong but">X</a>
+                    <a href="" class="notknown but">N/A</a>
                     </span>`
                     ;
                 target_div.appendChild(new_span);
@@ -198,3 +200,10 @@ submit_but.addEventListener('click', () => {
     // http://10.127.7.234:8050/loading/Distilbert/dasdg/a_b~%5Ec_d~%5Ee_f~
 })
 
+for (let i = 0; i < but_list.length; i++) {
+    but_list[i].addEventListener('mouseenter', () => {
+        const audio = new Audio("static/but_hover_sound.mp3");
+        audio.src = "static/but_hover_sound.mp3";
+        audio.play();
+    });
+}
