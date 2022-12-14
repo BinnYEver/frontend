@@ -5,8 +5,7 @@ const add_search = document.querySelector(".add_entity");
 const min_search = document.querySelector(".min_entity");
 const parent_entity_pair = document.querySelector(".entity_pair");
 const submit_but = document.querySelector('.submit_but');
-let audio_sound = document.querySelectorAll("audio");
-let but_list = document.querySelectorAll(".but");
+// let audio_sound = document.querySelectorAll("audio");
 
 var funDownload = function (content, filename) {
     // create hidden download link
@@ -23,8 +22,65 @@ var funDownload = function (content, filename) {
     document.body.removeChild(eleLink);
 };
 
-window.onload = function () {
+function create_visit_id() {
+    var cur_url = window.location.href;
+    try {
+        response_visit_id = $.getJSON(cur_url.replace("resultER", "create_visit_id"), function () {
+            console.log("get_visit_id");
+        });
+        response_visit_id.done(function (data) {
+            console.log("response from get_visit_id");
+            console.log(response_visit_id.responseJSON)
+            // console.log(jqxhr.responseJSON);
+            var status = response_visit_id.responseJSON['success'];
+            if (status != true) {
+                alert("Error: " + status);
+                window.location.href = "/"
+            }
+            var visit_id = response_visit_id.responseJSON['visit_id'];
+            var tuple_ids = response_visit_id.responseJSON['tuple_ids'];
+            console.log("return now")
+            return response_visit_id.responseJSON;
+            // var ent_tuples = jqxhr.responseJSON['ent_tuples'];
+        });
+    } catch (error) {
+        alert(error);
+        window.location.href = "/";
+    }
+}
 
+
+window.onload = async function () {
+    var cur_url = window.location.href;
+    try {
+        response_visit_id = $.getJSON(cur_url.replace("resultER", "create_visit_id"), function () {
+            console.log("get_visit_id");
+        });
+        response_visit_id.done(function (data) {
+            console.log("response from get_visit_id");
+            console.log(response_visit_id.responseJSON)
+            // console.log(jqxhr.responseJSON);
+            var status = response_visit_id.responseJSON['success'];
+            if (status != true) {
+                alert("Error: " + status);
+                window.location.href = "/"
+            }
+            var visit_id = response_visit_id.responseJSON['visit_id'];
+            var tuple_ids = response_visit_id.responseJSON['tuple_ids'];
+            show_results(visit_id, tuple_ids);
+            // var ent_tuples = jqxhr.responseJSON['ent_tuples'];
+        });
+    } catch (error) {
+        alert(error);
+        window.location.href = "/";
+    }
+    // console.log(visit_id);
+    
+
+}
+
+function show_results(visit_id, tuple_ids) {
+    console.log(visit_id, tuple_ids);
     var cur_url = window.location.href;
     // update input field
     var model_name = cur_url.split("/")[4];
@@ -121,22 +177,60 @@ window.onload = function () {
                 new_span.appendChild(new_arrow);
                 new_span.appendChild(new_entity_span_2);
                 new_span.appendChild(new_source);
+                /*
                 new_span.innerHTML += `
                     <span class="each_tuple_FB">
-                    <a href="" class="check but">✓</a>
-                    <a href="" class="wrong but">X</a>
-                    <a href="" class="notknown but">N/A</a>
+                    <a class="check but">✓</a>
+                    <a class="wrong but">X</a>
+                    <a class="notknown but">N/A</a>
                     </span>`
                     ;
+                */
+                // rewrite the code above
+                var new_feedback = document.createElement("span");
+                new_feedback.setAttribute("class", "each_tuple_FB");
+                var new_check = document.createElement("a");
+                new_check.setAttribute("class", "check but");
+                new_check.innerHTML = "✓";
+                var new_wrong = document.createElement("a");
+                new_wrong.setAttribute("class", "wrong but");
+                new_wrong.innerHTML = "X";
+                var new_notknown = document.createElement("a");
+                new_notknown.setAttribute("class", "notknown but");
+                new_notknown.innerHTML = "N/A";
+                new_feedback.appendChild(new_check);
+                new_feedback.appendChild(new_wrong);
+                new_feedback.appendChild(new_notknown);
+                new_span.appendChild(new_feedback);
+
                 target_div.appendChild(new_span);
 
             }
+            
+            var but_list = $(".but");
+            console.log(but_list)
+            for (let i = 0; i < but_list.length; i++) {
+                but_list[i].addEventListener('click', () => {
+                    tuple_ind = Math.floor(i / 3)
+                    choice = i % 3
+                    console.log("tuple_id", tuple_ind, choice);
+                    upload_feedback = $.getJSON(cur_url.split("resultER")[0] + "insert_feedback" + "/" + visit_id + "/" + tuple_ids[tuple_ind] + "/" + choice, function () {
+                        console.log("sent");
+                    });
+                    jqxhr.done(function (data) {
+                        console.log("success");
+                        // console.log(jqxhr);
+                        console.log(jqxhr.responseJSON);
+                });
+            });
+          }
         });
     } catch (error) {
         alert(error);
         window.location.href = "/"
     }
 }
+
 selected.addEventListener("click", () => {
     optionsContainer.classList.toggle("active");
 });
@@ -200,10 +294,3 @@ submit_but.addEventListener('click', () => {
     // http://10.127.7.234:8050/loading/Distilbert/dasdg/a_b~%5Ec_d~%5Ee_f~
 })
 
-for (let i = 0; i < but_list.length; i++) {
-    but_list[i].addEventListener('mouseenter', () => {
-        const audio = new Audio("static/but_hover_sound.mp3");
-        audio.src = "static/but_hover_sound.mp3";
-        audio.play();
-    });
-}
