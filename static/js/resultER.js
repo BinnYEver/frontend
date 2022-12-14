@@ -6,7 +6,23 @@ const min_search = document.querySelector(".min_entity");
 const parent_entity_pair = document.querySelector(".entity_pair");
 const submit_but = document.querySelector('.submit_but');
 
+var funDownload = function (content, filename) {
+    // create hidden download link
+    var eleLink = document.createElement('a');
+    eleLink.download = filename;
+    eleLink.style.display = 'none';
+    // convert content to blob address
+    var blob = new Blob([content]);
+    eleLink.href = URL.createObjectURL(blob);
+    // click
+    document.body.appendChild(eleLink);
+    eleLink.click();
+    // remove
+    document.body.removeChild(eleLink);
+};
+
 window.onload = function () {
+
     var cur_url = window.location.href;
     // update input field
     var model_name = cur_url.split("/")[4];
@@ -55,6 +71,24 @@ window.onload = function () {
             var ent_tuples = jqxhr.responseJSON['ent_tuples']
             var target_div = $(".result_tuples")[0];
             // new_feedback.append("<b>Appended text</b>");
+            var prompt_div = $(".prompt")[0];
+            var score_div = $(".score")[0];
+
+            var download_but = document.querySelector(".download_but");
+            download_but.addEventListener('click', function () {
+                funDownload(JSON.stringify(ent_tuples), 'tuples.json');    
+            });
+
+            for (var i = 0; i < prompts.length; i++) {
+                var new_prompt = document.createElement("div");
+                new_prompt.setAttribute("class", "prompt_entity");
+                new_prompt.innerHTML = prompts[i][0].replaceAll("<", "[").replaceAll(">", "]");
+                prompt_div.appendChild(new_prompt);
+                var new_score = document.createElement("div");
+                new_score.setAttribute("class", "score_entity");
+                new_score.innerHTML = prompts[i][1];
+                score_div.appendChild(new_score);
+            }
             for (var i = 0; i < ent_tuples.length; i++) {
                 var new_span = document.createElement("span");
                 var new_entity_span_1 = document.createElement("span");
@@ -163,3 +197,4 @@ submit_but.addEventListener('click', () => {
     location.href = target_url;
     // http://10.127.7.234:8050/loading/Distilbert/dasdg/a_b~%5Ec_d~%5Ee_f~
 })
+
