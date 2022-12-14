@@ -21,15 +21,15 @@ var funDownload = function (content, filename) {
     // remove
     document.body.removeChild(eleLink);
 };
-
+/*
 function create_visit_id() {
     var cur_url = window.location.href;
     try {
         response_visit_id = $.getJSON(cur_url.replace("resultER", "create_visit_id"), function () {
-            console.log("get_visit_id");
+            console.log("sent get_visit_id");
         });
         response_visit_id.done(function (data) {
-            console.log("response from get_visit_id");
+            console.log("success from get_visit_id");
             console.log(response_visit_id.responseJSON)
             // console.log(jqxhr.responseJSON);
             var status = response_visit_id.responseJSON['success'];
@@ -48,13 +48,13 @@ function create_visit_id() {
         window.location.href = "/";
     }
 }
-
+*/
 
 window.onload = async function () {
     var cur_url = window.location.href;
     try {
         response_visit_id = $.getJSON(cur_url.replace("resultER", "create_visit_id"), function () {
-            console.log("get_visit_id");
+            console.log("sent get_visit_id");
         });
         response_visit_id.done(function (data) {
             console.log("response from get_visit_id");
@@ -118,10 +118,10 @@ function show_results(visit_id, tuple_ids) {
 
     try {
         jqxhr = $.getJSON(cur_url.replace("resultER", "update"), function () {
-            console.log("sent");
+            console.log("sent update results");
         });
         jqxhr.done(function (data) {
-            console.log("success");
+            console.log("success update results");
             // console.log(jqxhr);
             console.log(jqxhr.responseJSON);
             // console.log(jqxhr.responseJSON);
@@ -215,10 +215,10 @@ function show_results(visit_id, tuple_ids) {
                     choice = i % 3
                     console.log("tuple_id", tuple_ind, choice);
                     upload_feedback = $.getJSON(cur_url.split("resultER")[0] + "insert_feedback" + "/" + visit_id + "/" + tuple_ids[tuple_ind] + "/" + choice, function () {
-                        console.log("sent");
+                        console.log("sent feedback");
                     });
                     jqxhr.done(function (data) {
-                        console.log("success");
+                        console.log("success feedback");
                         // console.log(jqxhr);
                         console.log(jqxhr.responseJSON);
                 });
