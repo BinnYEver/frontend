@@ -7,6 +7,39 @@ const parent_entity_pair = document.querySelector(".entity_pair");
 const submit_but = document.querySelector('.submit_but');
 // let audio_sound = document.querySelectorAll("audio");
 
+// build an 20 * 3 array of 0
+var check_states = new Array(20);
+for (var i = 0; i < check_states.length; i++) {
+    check_states[i] = new Array(3);
+    for (var j = 0; j < check_states[i].length; j++) {
+        check_states[i][j] = 0;
+    }
+}
+function update_choice(i, j, but_list) {
+    check_states[i][0] = 0;
+    check_states[i][1] = 0;
+    check_states[i][2] = 0;
+    but_list[i * 3].setAttribute("class", "check but");
+    but_list[i * 3 + 1].setAttribute("class", "wrong but");
+    but_list[i * 3 + 2].setAttribute("class", "notknown but");
+    if(j == 0) {
+        check_states[i][0] = 1;
+        but_list[i * 3].setAttribute("class", "check_chosen but");
+    }
+    else if(j == 1) {
+        check_states[i][1] = 1;
+        but_list[i * 3 + 1].setAttribute("class", "wrong_chosen but");
+    }
+    else if(j == 2) {
+        check_states[i][2] = 1;
+        but_list[i * 3 + 2].setAttribute("class", "notknown_chosen but");
+    }
+
+    
+    console.log(check_states);
+}
+
+
 var funDownload = function (content, filename) {
     // create hidden download link
     var eleLink = document.createElement('a');
@@ -132,10 +165,10 @@ function show_results(visit_id, tuple_ids) {
             var prompt_div = $(".prompt")[0];
             var score_div = $(".score")[0];
 
-            var download_but = document.querySelector(".download_but");
-            download_but.addEventListener('click', function () {
-                funDownload(JSON.stringify(ent_tuples), 'tuples.json');    
-            });
+            //var download_but = document.querySelector(".download_but");
+            //download_but.addEventListener('click', function () {
+            //    funDownload(JSON.stringify(ent_tuples), 'tuples.json');    
+            //});
 
             for (var i = 0; i < prompts.length; i++) {
                 var new_prompt = document.createElement("div");
@@ -213,6 +246,7 @@ function show_results(visit_id, tuple_ids) {
                 but_list[i].addEventListener('click', () => {
                     tuple_ind = Math.floor(i / 3)
                     choice = i % 3
+                    update_choice(tuple_ind, choice, but_list)
                     console.log("tuple_id", tuple_ind, choice);
                     upload_feedback = $.getJSON(cur_url.split("resultER")[0] + "insert_feedback" + "/" + visit_id + "/" + tuple_ids[tuple_ind] + "/" + choice, function () {
                         console.log("sent feedback");

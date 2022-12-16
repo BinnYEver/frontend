@@ -592,6 +592,25 @@ body {
 }
 
 
+.each_tuple .each_tuple_FB .check_chosen {
+    transform: scale(1.2);
+    background-color: #a2ef13;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.each_tuple .each_tuple_FB .wrong_chosen {
+    transform: scale(1.2);
+    background-color: #ff2a00;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.each_tuple .each_tuple_FB .notknown_chosen {
+    transform: scale(1.2);
+    background-color: #13ceef;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+
 .result_board .download_but {
     margin-left: 50%;
     width: 150px;

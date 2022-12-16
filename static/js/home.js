@@ -13,7 +13,6 @@ const parent_entity_pair = document.querySelector(".entity_pair");
 
 
 
-
 selected.addEventListener("click", () => {
     optionsContainer.classList.toggle("active");
 });
