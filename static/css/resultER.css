@@ -135,7 +135,7 @@ body {
     padding-top: 20px;
     margin-left: 50%;
     color: #000;
-    font: normal 700 20px 'Poppins', sans-serif;
+    font: normal 700 16px 'Poppins', sans-serif;
 }
 
 
@@ -402,6 +402,12 @@ body {
     letter-spacing: 2px;
 }
 
+.prompt_title {
+    margin-left: 50%;
+    color: black;
+    font: normal 700 16px 'Poppins', sans-serif;
+}
+
 .show_prompt_socre {
     height: 120px;
     width: 80%;
@@ -534,7 +540,7 @@ body {
 }
 
 .each_tuple .source_from {
-    width: 15%;
+    width: 20%;
     text-align: center;
     font: normal 200 10px 'Poppins', sans-serif;
     line-height: 42px;
