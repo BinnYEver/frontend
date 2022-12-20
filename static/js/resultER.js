@@ -6,7 +6,8 @@ const min_search = document.querySelector(".min_entity");
 const parent_entity_pair = document.querySelector(".entity_pair");
 const submit_but = document.querySelector('.submit_but');
 // let audio_sound = document.querySelectorAll("audio");
-
+const audio = new Audio("../static/but_hover_sound.mp3");
+audio.src = "../static/but_hover_sound.mp3";
 // build an 20 * 3 array of 0
 var check_states = new Array(20);
 for (var i = 0; i < check_states.length; i++) {
@@ -244,6 +245,7 @@ function show_results(visit_id, tuple_ids) {
             console.log(but_list)
             for (let i = 0; i < but_list.length; i++) {
                 but_list[i].addEventListener('click', () => {
+                    // audio.play();
                     tuple_ind = Math.floor(i / 3)
                     choice = i % 3
                     update_choice(tuple_ind, choice, but_list)

@@ -234,7 +234,10 @@ body {
 .search_box .add_entity, .search_box .min_entity {
     height: 20px;
     width: 20px;
-    background-color: pink;
+    /*background-color: pink;*/
+    /* show the color code of pink*/
+    background-color: #00eeff;
+
     text-align: center;
     border-radius: 8px;
     color: white;
@@ -451,8 +454,8 @@ body {
 }
 
 .show_prompt_socre .score {
-    float: left;
-    margin-left: 50%;
+    float: right;
+    margin-left: 0%;
 }
 
 .show_prompt_socre .score .score_entity {
@@ -462,7 +465,7 @@ body {
 
 .result_tuples {
     /* box-sizing: border-box; */
-    margin-top: 150px;
+    margin-top: 50px;
     margin-left: 8.5%;
     margin-right: 8.5%;
     text-align: center;
@@ -471,7 +474,6 @@ body {
 .head_table {
     display: flex;
 }
-
 .result_tuples .tuples_col, .result_board .feedback_col {
     font: normal 700 24px 'Poppins', sans-serif;
     color: #000;
@@ -481,24 +483,59 @@ body {
     position: relative;
 }
 
-.result_tuples .feedback_col:hover::before {
-    position: absolute;
-    top: -130px;
-    left: 0;
-    color: #fff;
-    font-size: .8em;
-    background: #1ac4e6;
-    padding: 5px;
-    border-radius: 5px;
-    content: 'We are looking forwards to getting the feedback from you';
+.tooltip {
+    position: relative;
+    
+    /*border-bottom: 1px dotted black;*/
 }
 
+.tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    font-size: 12px;
+    opacity: 0.8;
+    /* 定位 */
+    position: absolute;
+    word-wrap:break-word;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -100px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+/*
+.result_tuples .feedback_col:hover::before {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    color: #fff;
+    font-size: .5em;
+    background: #1ac4e6;
+    padding: 5px;
+    opacity: 0.8;
+    border-radius: 5px;
+    white-space: pre;
+    content: 'Is the tuple plausible for the relation that you defined?\A ✓: Corrent  X: Wrong  N/A: Unjudgeable';
+}*/
+
 .result_tuples .tuples_col {
-    width: 80%;
+    width: 65%;
+}
+.result_tuples .pad_col {
+    width: 20%;
 }
 
 .result_tuples .feedback_col {
-    width: 20%;
+    width: 10%;
+    align-items: right;
 }
 
 .each_tuple {

@@ -23,6 +23,7 @@ def create_db():
 
 def create_visit_id(db, model_name, init_prompts_str, seed_ent_tuples_str, results):
     # db = connect_to_db()
+    db.reconnect()
     cursor = db.cursor()
     # check if the query already exists
     cursor.execute("SELECT * FROM Queries WHERE model_name = %s AND init_prompts_str = %s AND seed_ent_tuples_str = %s", (model_name, init_prompts_str, seed_ent_tuples_str))
@@ -74,8 +75,8 @@ def create_visit_id(db, model_name, init_prompts_str, seed_ent_tuples_str, resul
             "success": True
         }
 
-def insert_feedback(visit_id, tuple_id, feedback):
-    db = connect_to_db()
+def insert_feedback(db, visit_id, tuple_id, feedback):
+    db.reconnect()
     cursor = db.cursor()
     # if visit_id and tuple_id already exist, update the feedback
     cursor.execute("SELECT * FROM Feedbacks WHERE visit_id = %s AND tuple_id = %s", (visit_id, tuple_id))

@@ -9,8 +9,6 @@ from demo import MAX_N_ENT_TUPLES, retrieve_results
 app = create_app()
 bertnet_db = db.connect_to_db()
 
-def init_database():
-    db.connect_to_db()
 
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/home', methods=['GET', 'POST'])
@@ -29,7 +27,7 @@ def sign_up():
 
 @app.route('/insert_feedback/<visit_id>/<tuple_id>/<feedback>')
 def insert_feedback(visit_id, tuple_id, feedback):
-    status = db.insert_feedback(visit_id, tuple_id, feedback)
+    status = db.insert_feedback(bertnet_db, visit_id, tuple_id, feedback)
     return jsonify(status)
 
 @app.route('/create_visit_id/<model_name>/<init_prompts_str>/<seed_ent_tuples_str>')

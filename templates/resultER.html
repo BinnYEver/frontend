@@ -38,23 +38,25 @@
                 </a>
                 <p>-- harvest kowledge graphs from pretrained language models --</p>
             </div>
-            <!--
+            
             <div class="fr">
-                <ul>
+                <ul><!--
                     <li><a href="{{ url_for('log_in') }}"><img src="../../../../static/imgs/account_circle.png" alt=""></a>
                     <li><a href="{{ url_for('sign_up')}}" id="sign_up_btn">sign up</a></li>
                     <li><a href="#"><img src="../../../../static/imgs/notification_circle.png" alt=""></a></li>
-                    </li>
-                    <li id="tuple_download"><a href="javascirpt:;">Download</a></li>
+                    </li-->
+                    <li id="tuple_download"><a href="https://github.com/tanyuqian/knowledge-harvest-from-lms/tree/master/results">Download</a></li>
                 </ul>
             </div>
-            -->
+            
         </div>
     </section>
     <section class="w result_board">
         <section class="search_box">
             <div class="model_search">
-                <h4>Model Type:</h4>
+                <h4 class="tooltip">Model Type:
+                    <span class="tooltiptext">Select the language model to be used for knowledge extraction</span>
+                </h4>
                 <div id="Model_type">
                     <div class="options-container">
                         <div class="option"><input type="radio" class="radio" id="roberta-base" name="model_type"><label
@@ -79,11 +81,15 @@
                 </div>
             </div>
             <div class="relationship_search">
-                <h4>Relationship:</h4>
+                <h4 class="tooltip">Template:
+                    <span class="tooltiptext">Input a sentence to express the desired relationship. Use "A" and "B" as the placeholders.</span>
+                </h4>
                 <div id="Relationship"><input type="text"></div>
             </div>
             <div class="seed_search">
-                <h4>Seed Entity:</h4>
+                <h4 class="tooltip">Examples:
+                    <span class="tooltiptext">Input some entity tuples of the desired relationships to avoid ambiguity (min: 3, max: 5).</span>
+                </h4>
                 <div id="Seed_Entity">
                     <div class="entity_pair">
                         <div class="entity_pair_inputbox"><input type="text"><input type="text"></div>
@@ -98,7 +104,7 @@
             <a href="javascript:;" class="min_entity">-</a>
             <div class="submit_but">Submit</div>
         </section>
-        <h1>Result</h1>
+        <!--div style="font: normal 700 24px 'Poppins', sans-serif;color: #000;text-align: center;">Results</div-->
         <div class="model_type_div">
             <span>Model type:</span>
             <span class="M_type">RoBerta-large</span>
@@ -114,7 +120,9 @@
         <!-- <div class="download_but">
             <a href="javascript:;">Download Tuples</a>
         </div> -->
-        <div class="prompt_title">Intermediate Prompt</div>
+        <div class="tooltip" style="font: normal 700 24px 'Poppins', sans-serif;color: #000;text-align: center; margin-top: 2cm;">Prompts
+            <span class="tooltiptext">The prompts are the intermediate products of our framework. Please refer to our paper for details.</span>
+        </div>
         <div class="show_prompt_socre">
             <div class="prompt">
                 <div class="title">Prompts</div>
@@ -127,8 +135,13 @@
 
         <section class="result_tuples">
             <div class="head_table">
-                <span class="tuples_col">Entity Pairs</span>
-                <span class="feedback_col">Feedback:</span>
+                <span class="tooltip tuples_col">Entity Pairs
+                    <span class="tooltiptext">The extracted entity pairs with their weights</span>
+                </span>
+                <div  class="pad_col"></div>
+                <div  class="feedback_col tooltip"> Feedback 
+                    <span class="tooltiptext">Is the tuple plausible for the relation that you defined?<br> ✓: Corrent <br> X: Wrong <br> N/A: Unjudgeable</span>
+                </div>
             </div>
             <!-- examples...
             <div class="each_tuple">
@@ -219,7 +232,7 @@
             <div class="information">
                 <div id="contact_us">
                     <p class="main_title">Contact Us</p>
-                    <p class="sub_content"><img src="../static/imgs/mail_outline.png" alt=""> lmnet@gmail.com </p>
+                    <p class="sub_content"><img src="../static/imgs/mail_outline.png" alt=""> lmnet.ucsdgmail.com </p>
                 </div>
                 <!-- <div id="downloads">
                     <p class="main_title"> </p>

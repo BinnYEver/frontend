@@ -113,7 +113,7 @@ body {
 .body_container {
 
 
-    min-height: 1700px;
+    min-height: 1000px;
     box-sizing: border-box;
     background-color: rgba(255, 255, 255, 1);
     opacity: 0.9;
@@ -123,7 +123,7 @@ body {
 .search_box {
 
     margin: 0 auto;
-    margin-top: 160px;
+    margin-top: 120px;
     height: 55px;
     width: 994px;
 
@@ -581,4 +581,32 @@ body {
         transform: translateY(-120vh) rotate(600deg);
     }
 
+}
+.tooltip {
+    position: relative;
+    
+    /*border-bottom: 1px dotted black;*/
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    font-size: 12px;
+    opacity: 0.8;
+    /* 定位 */
+    white-space:break-word;;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -100px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
